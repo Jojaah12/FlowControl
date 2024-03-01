@@ -10,15 +10,19 @@
             {
                 Console.WriteLine("Main Menu");
                 Console.WriteLine("1. Determine Price Category");
+                Console.WriteLine("2. Repeat User Input Ten Times");
                 Console.WriteLine("0. Exit");
                 Console.Write("Enter your choice: ");
 
                 string choice = Console.ReadLine();
-                 
+
                 switch (choice)
                 {
                     case "1":
                         DeterminePriceCategory();
+                        break;
+                    case "2":
+                        RepeatUserInputTenTimes();
                         break;
                     case "0":
                         programRunning = false;
@@ -51,6 +55,17 @@
             else
             {
                 Console.WriteLine("Invalid age. Please enter a valid number.");
+            }
+        }
+
+        static void RepeatUserInputTenTimes()
+        {
+            Console.Write("Enter some text: ");
+            string input = Console.ReadLine();
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine($"{i}. {input}");
             }
         }
     }
